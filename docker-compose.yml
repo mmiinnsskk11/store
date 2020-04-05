@@ -4,7 +4,7 @@ services:
   nginx:
     build: .
     image: nginx:latest
-    container_name: nginx-lumen
+    container_name: nginx-laravel
     ports:
       - 80:80
     volumes:
@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile-php
     ports:
       - 9000:9000
-    container_name: php-lumen
+    container_name: php-laravel
     volumes:
       - ./config/php/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
       - ./code:/var/www
@@ -29,7 +29,7 @@ services:
   db:
     image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
-    container_name: mysql-lumen
+    container_name: mysql-laravel
     environment:
       MYSQL_DATABASE: test
       MYSQL_ROOT_PASSWORD: password
