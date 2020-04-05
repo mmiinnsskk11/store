@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  nginx:
+    build: .
+    image: nginx:latest
+    container_name: nginx-lumen
+    ports:
+      - 80:80
+    volumes:
+      - ./config/nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./code:/var/www
+
+  php:
+    image: php:7.3-fpm
+    build:
+      context: ./
+      dockerfile: Dockerfile-php
+    ports:
+      - 9000:9000
+    container_name: php-lumen
+    volumes:
+      - ./config/php/custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+      - ./code:/var/www
+#      - ./xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysql-lumen
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+#      - ./config/mysql/my.cnf:/etc/mysql/my.cnf
