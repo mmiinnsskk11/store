@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCatalogsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateCatalogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('catalogs', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('categories_id');
-            $table->string('subcategories_id');
-            $table->string('name');
-            $table->longText('description');
-            $table->string('cost');
-            $table->integer('active')->default(1);
+            $table->integer('product_id');
+            $table->string('image');
             $table->integer('delete')->default(0);
-            $table->integer('reserve')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateCatalogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogs');
+        Schema::dropIfExists('images');
     }
 }

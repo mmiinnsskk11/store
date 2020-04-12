@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Catalog;
+use App\Category;
 use App\Http\Controllers\Controller;
+use App\Services\CreateProduct;
+use App\Services\UploadImage;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
@@ -11,33 +15,39 @@ class CatalogController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
         $catalog = Catalog::all();
-        return view('catalog.index', compact('catalog'));
+        return view('admin.catalog.index', compact('catalog'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Category $categories
+     * @param Subcategory $subcategory
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(Category $categories,
+                           Subcategory $subcategory)
     {
-        //
+        $categories = $categories->all();
+        $subcategories = $subcategory->all();
+        return view('admin.catalog.create',
+            compact('categories', 'subcategories'));
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param CreateProduct $createProduct
      */
-    public function store(Request $request)
+    public function store(Request $request,
+                          CreateProduct $createProduct)
     {
-        //
+        return $createProduct->createProduct($request);
+
     }
 
     /**

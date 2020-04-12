@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::resource('/categories', 'Admin\CategoriesController');
+Route::resource('/categories', 'Admin\CategoryController');
+Route::resource('/subcategories', 'Admin\SubcategoryController');
 Route::resource('/catalog', 'Admin\CatalogController');
 
 //Route::get('/home', 'HomeController@index')->name('home');

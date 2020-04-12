@@ -8,5 +8,7 @@ class Catalog extends Model
 {
     protected $table = 'catalogs';
 
-    protected $fillable = ['name', 'description', 'img', 'cost', 'comment_id', 'active', 'delete'];
+    protected $fillable = [
+        'categories_id', 'subcategories_id', 'name', 'description', 'cost', 'reserve', 'active', 'delete'
+    ];
 }
