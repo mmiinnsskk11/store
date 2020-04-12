@@ -25,7 +25,7 @@ class UploadImage
     public function upload($product_id, $images)
     {
         foreach ($images as $image) {
-            $path = Storage::disk('local')->put('/product', $image);
+            $path = Storage::disk('public')->put('/product', $image);
             $data_images[] = [
                 'product_id' => $product_id,
                 'image' => $path,

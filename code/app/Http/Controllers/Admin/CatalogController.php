@@ -17,9 +17,9 @@ class CatalogController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Catalog $catalog)
     {
-        $catalog = Catalog::all();
+        $catalog = $catalog->getCatalog();
         return view('admin.catalog.index', compact('catalog'));
     }
 
