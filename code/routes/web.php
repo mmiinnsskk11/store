@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+
+});
+
 Route::resource('/categories', 'Admin\CategoryController');
 Route::resource('/subcategories', 'Admin\SubcategoryController');
 Route::resource('/catalog', 'Admin\CatalogController');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

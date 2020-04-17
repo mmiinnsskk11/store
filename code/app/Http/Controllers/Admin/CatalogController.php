@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Catalog;
 use App\Category;
 use App\Http\Controllers\Controller;
-use App\Services\CreateProduct;
-use App\Services\UploadImage;
+use App\Services\ProductService;
 use App\Subcategory;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -41,10 +42,10 @@ class CatalogController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param Request $request
-     * @param CreateProduct $createProduct
+     * @param ProductService $createProduct
      */
     public function store(Request $request,
-                          CreateProduct $createProduct)
+                          ProductService $createProduct)
     {
         return $createProduct->createProduct($request);
 
@@ -63,13 +64,14 @@ class CatalogController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Catalog  $catalog
-     * @return \Illuminate\Http\Response
+     * @param Catalog $catalog
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(Catalog $catalog)
+    public function edit(Catalog $catalog, Category $category, Subcategory $subcategory)
     {
-        //
+        $categories = $category->getCategories();
+        $subcategories = $subcategory->getSubcategories();
+        return view('admin.catalog.edit', compact('catalog', 'categories', 'subcategories'));
     }
 
     /**
@@ -79,9 +81,9 @@ class CatalogController extends Controller
      * @param  \App\Catalog  $catalog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Catalog $catalog)
+    public function update(Request $request, Catalog $catalog, ProductService $productService)
     {
-        //
+        return $productService->updateProduct($request, $catalog);
     }
 
     /**
@@ -92,6 +94,7 @@ class CatalogController extends Controller
      */
     public function destroy(Catalog $catalog)
     {
-        //
+        $catalog->delete();
+        return redirect()->route('catalog.index');
     }
 }
