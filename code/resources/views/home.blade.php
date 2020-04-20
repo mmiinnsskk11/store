@@ -168,7 +168,7 @@
                 <h3 class="pull-left">featured products</h3>
                 <ul class="otherr-link pull-right">
                     <li class="active"><a data-toggle="pill" href="#all">all</a></li>
-                    <li><a data-toggle="pill" href="#elec">Electronic</a></li>
+                    <li><a data-toggle$category->getCategories();v="pill" href="#elec">Electronic</a></li>
                     <li><a data-toggle="pill" href="#fashion">Fashion        </a></li>
                     <li><a data-toggle="pill" href="#it">IT        </a></li>
                     <li><a data-toggle="pill" href="#food">Food & Drink</a></li>

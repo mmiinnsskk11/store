@@ -13,6 +13,11 @@ class Category extends Model
     ];
 
 
+    public function subCategory()
+    {
+        return $this->hasMany(Subcategory::class);
+    }
+
     /**
      * Запрос на получение записи по id категории
      * @param $id
@@ -31,6 +36,7 @@ class Category extends Model
      */
     public function getCategories($delete = 0)
     {
-        return $this->where('delete', $delete)->get();
+        return $this->with('subCategory')
+            ->where('delete', $delete)->get();
     }
 }

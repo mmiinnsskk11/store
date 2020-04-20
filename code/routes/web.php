@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::group(['middleware' => 'auth'], function () {
-
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::resource('/categories', 'Admin\CategoryController');
+    Route::resource('/subcategories', 'Admin\SubcategoryController');
+    Route::resource('/catalog', 'Admin\CatalogController');
 });
 
-Route::resource('/categories', 'Admin\CategoryController');
-Route::resource('/subcategories', 'Admin\SubcategoryController');
-Route::resource('/catalog', 'Admin\CatalogController');
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/marketplace', 'MarketplaceController@index')->name('marketplace');

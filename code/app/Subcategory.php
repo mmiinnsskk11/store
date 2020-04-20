@@ -22,9 +22,17 @@ class Subcategory extends Model
      * @param $delete
      * @return mixed
      */
-    public function getSubcategories($delete = 0)
+    public function getSubcategories($page = 12, $delete = 0)
     {
-        return $this->with('category')->where('delete', $delete)->get();
+        return $this->with('category')->where('delete', $delete)
+            ->latest('id')->paginate($page);
+    }
+
+    public function getSubcategoryByCategory($category_id, $page = 12, $delete = 0)
+    {
+        return $this->with('category')
+            ->where(['delete' => $delete, 'category_id' => $category_id])
+            ->latest('id')->paginate($page);
     }
 
     public function getSubcategoryById($id)
