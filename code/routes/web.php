@@ -27,3 +27,4 @@ Route::get('/marketplace', 'MarketplaceController@index')->name('marketplace');
 Route::get('/marketplace/{name}', 'MarketplaceController@show')->name('marketplace.show');
 Route::get('/about-as', 'HomeController@aboutAs')->name('about-as');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::post('/subscribe', 'FeedbackController@subscribe')->name('subscribe');

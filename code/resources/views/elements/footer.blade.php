@@ -53,7 +53,9 @@
                 <div class="col-md-4 col-xs-12">
                     <h3>Newsletter</h3>
                     <p class="news-desc">Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.</p>
-                    <form action="#" class="news-letter-form">
+                    <form action="{{route('subscribe')}}" method="POST" class="news-letter-form">
+                        @method('POST')
+                        @csrf
                         <input type="text" name="email" class="form-control" placeholder="Enter your e-mail">
                         <button type="submit" class="btnsub">Subscribe</button>
                     </form>
@@ -212,13 +214,7 @@
     </div>
     <div class="copyright">
         <div class="container">
-            <span>© <a href="#" title="">ClickBuy</a> - All Rights Reserved.</span>
-            <ul class="payment">
-                <li><a href="#"><img src="img/paypal.png" alt="images" class="img-responsive"></a></li>
-                <li><a href="#"><img src="img/visa.png" alt="images" class="img-responsive"></a></li>
-                <li><a href="#"><img src="img/american.png" alt="images" class="img-responsive"></a></li>
-                <li><a href="#"><img src="img/mastercard.png" alt="images" class="img-responsive"></a></li>
-            </ul>
+            <span>© <a href="/" title="">ClickBuy</a> - All Rights Reserved.</span>
             <div class="clearfix"></div>
         </div>
     </div>

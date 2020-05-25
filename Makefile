@@ -29,10 +29,10 @@ show: #show docker's containers
 	@sudo docker ps
 
 connect_php: #Connect to APP container
-	@docker-compose exec $(container_php) bash
+	@docker exec -it $(container_php) bash
 
 connect_db: #Connect to DB container
-	@docker-compose exec $(container_db) bash
+	@docker exec -it $(container_db) bash
 
 connect_server: #Connect to container_server container
-	@docker-compose exec $(container_server) /bin/sh
+	@docker exec -it $(container_server) /bin/sh
