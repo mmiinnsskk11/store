@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Catalog;
+use Illuminate\Http\Request;
 
 class MarketplaceController extends Controller
 {
@@ -19,7 +20,13 @@ class MarketplaceController extends Controller
      */
     public function index(Catalog $catalog)
     {
-        $products = $catalog->getCatalog();
+        $products = $catalog->getCatalogs();
+        return view('marketplace.index', compact('products'));
+    }
+
+    public function show($name, Catalog $catalog)
+    {
+        $products = $catalog->getCatalog($name);
         return view('marketplace.index', compact('products'));
     }
 

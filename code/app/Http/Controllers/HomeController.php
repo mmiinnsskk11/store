@@ -27,4 +27,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function aboutAs()
+    {
+        return view('about-as.about-as');
+    }
+
+    public function contact()
+    {
+        return view('about-as.contact');
+    }
 }

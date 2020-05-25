@@ -105,14 +105,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-8 col-xs-7 logo">
-                    <a href="#" title="Clickbuy"><img src="img/logo.png" alt="images" class="img-reponsive"></a>
+                    <a href="#" title="Clickbuy"><img src="/img/logo.png" alt="images" class="img-reponsive"></a>
                 </div>
                 <div class="col-md-9 col-sm-4 col-xs-5 nextlogo">
                     <div class="block block-2">
                         <div class="cart">
                             <a href="#" title="" id="label3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <div class="photo photo-cart">
-                                    <img src="img/cart.png" alt="images" class="img-reponsive">
+                                    <img src="/img/cart.png" alt="images" class="img-reponsive">
                                     <span class="lbl">05</span>
                                 </div>
                                 <p class="inform inform-cart">
@@ -125,7 +125,7 @@
                                     <li>
                                         <div class="item-order">
                                             <div class="item-photo">
-                                                <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                <a href="#"><img src="/img/cart1.png" alt="images" class="img-responsive"></a>
                                             </div>
                                             <div class="item-content">
                                                 <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
@@ -138,7 +138,7 @@
                                     <li>
                                         <div class="item-order">
                                             <div class="item-photo">
-                                                <a href="#"><img src="img/cart1.png" alt="images" class="img-responsive"></a>
+                                                <a href="#"><img src="/img/cart1.png" alt="images" class="img-responsive"></a>
                                             </div>
                                             <div class="item-content">
                                                 <h3><a href="#" title="">iPad Pro MLMX2CL/A</a></h3>
@@ -208,7 +208,7 @@
                                 <ul class="level0">
                                     @foreach ($category as $cat)
                                         <li class="game">
-                                            <a href="#">{{$cat->name}}</a>
+                                            <a href="{{route('marketplace.show', $cat->id)}}">{{$cat->name}}</a>
                                             <div class="dropdown-content">
                                                 <ul class="level1">
                                                     @foreach($cat->subCategory as $subCat)
@@ -242,14 +242,14 @@
                                 <a href="/" title="Home"><i class="fa fa-home"></i>Главная</a>
                             </li>
                             <li class="menu-collection-page menu-item-has-child dropdown">
-                                <a href="{{route('marketplace')}}" title="Marketplace">marketplace</a>
+                                <a href="{{route('marketplace')}}" title="Marketplace">Товары</a>
                             </li>
                             <li class="dropdown menu-contact-page menu-item-has-child">
                                 <a href="#" title="ContactUs">О нас</a>
                                 <span class="plus js-plus-icon"></span>
                                 <ul class="dropdown-menu menu-level">
-                                    <li><a href="contact_us.html" title="contact us">Контакты</a></li>
-                                    <li><a href="about-us.html" title="about us">О нас</a></li>
+                                    <li><a href="{{route('contact')}}" title="contact us">Контакты</a></li>
+                                    <li><a href="{{route('about-as')}}" title="about us">О нас</a></li>
                                 </ul>
                             </li>
                         </ul>

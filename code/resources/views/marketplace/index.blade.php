@@ -9,13 +9,13 @@
             <div class="heading-sub">
                 <h3 class="pull-left">shop list</h3>
                 <ul class="other-link-sub pull-right">
-                    <li><a href="#home">Home</a></li>
-                    <li><a class="active" href="#shop">Shop</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a class="active" href="#shop">Каталог</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="widget-banner">
-                <a href="#" class="images"><img src="img/products/banner-v2.png" alt="images" class="img-responsive"></a>
+                <a href="#" class="images"><img src="/img/products/banner-v2.png" alt="" class="img-responsive"></a>
                 <div class="banner-text">
                     <h2>Just Press</h2>
                     <p>Mini camera by Instax</p>
@@ -28,98 +28,19 @@
                 <div class="row">
                     <div class="col-md-3 col-xs-12">
                         <div class="filter-block">
-                            <div class="filter-block-shop filter-price">
-                                <div class="block-title">
-                                    <h3>FILTER BY PRICE</h3>
-                                </div>
-                                <div class="block-content">
-                                    <div class="price-range-holder">
-                                        <input type="text" class="price-slider" value="">
-                                        <span class="min-max">
-                                                Price: $990 - $3450
-                                            </span>
-                                        <span class="filter-button">
-                                                <a href="#">Filter</a>
-                                            </span>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="filter-block-shop filter-cate">
                                 <div class="block-title">
-                                    <h3>Categories</h3>
+                                    <h3>Категории</h3>
                                 </div>
                                 <div class="block-content">
                                     <ul>
+                                        @foreach ($category as $cat)
                                         <li class="active">
-                                            <a href="#">Laptop & Computer</a>
-                                            <span class="number">(08)</span>
+                                            <a href="{{route('marketplace.show', $cat->id)}}">{{$cat->name}}</a>
+                                            <span class="number">({{$cat->subCategory->count()}})</span>
                                         </li>
-                                        <li>
-                                            <a href="#">Accessories</a>
-                                            <span class="number">(16)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Gaming</a>
-                                            <span class="number">(20)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Mac Computers</a>
-                                            <span class="number">(09)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Ultrabooks</a>
-                                            <span class="number">(51)</span>
-                                        </li>
-                                        <li>
-                                            <a href="#">Printers & Ink</a>
-                                            <span class="number">(07)</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter-block-shop">
-                                <div class="block-title">
-                                    <h3>BRAND</h3>
-                                </div>
-                                <div class="block-content">
-                                    <form>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Accesi</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Bikis</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Elle</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Godo</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Jeana</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">Ladora</label>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="filter-block-shop filter-color">
-                                <div class="block-title">
-                                    <h3>Color</h3>
-                                </div>
-                                <div class="block-content">
-                                    <ul>
-                                        <li><a href="#"><i class="dot black-d"></i>Black </a></li>
-                                        <li><a href="#"><i class="dot blue-sky"></i>Blue </a></li>
-                                        <li><a href="#"><i class="dot brown"></i>Brown </a></li>
-                                        <li><a href="#"><i class="dot"></i>White </a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -168,7 +89,7 @@
                             @foreach($products as $product)
                             <div class="product-list-item">
                                 <div class="product-item-img">
-                                    <a href="#"><img src="img/products/product1.png" alt="images" class="img-responsive"></a>
+                                    <a href="#"><img src="{{asset("storage/" . $product->images[0]->image)}}" alt=" " class="img-responsive"></a>
                                     <div class="label label-2 red label-top-20">Hot</div>
                                 </div>
                                 <div class="product-item-info">
@@ -177,7 +98,7 @@
                                         <span class="price black">{{$product->cost}} BYN</span>
                                     </div>
                                     <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span class="icon"></span>ADD TO CART</a>
+                                        <a href="#" class="addcart-ver2" title="Add to cart"><span class="icon"></span>В карзину</a>
                                     </div>
                                 </div>
                             </div>

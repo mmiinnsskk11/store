@@ -20,7 +20,7 @@ class CatalogController extends Controller
      */
     public function index(Catalog $catalog)
     {
-        $catalog = $catalog->getCatalog();
+        $catalog = $catalog->getCatalogs();
         return view('admin.catalog.index', compact('catalog'));
     }
 

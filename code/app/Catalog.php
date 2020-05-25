@@ -23,10 +23,17 @@ class Catalog extends Model
      * @param int $active
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getCatalog($page = 30, $delete = 0, $active = 1)
+    public function getCatalogs($page = 30, $delete = 0, $active = 1)
     {
         return $this->with('images')->where([
             'delete' => $delete, 'active' => $active
+        ])->paginate($page);
+    }
+
+    public function getCatalog($categories_id, $page = 30, $delete = 0, $active = 1)
+    {
+        return $this->with('images')->where([
+            'delete' => $delete, 'active' => $active, 'categories_id' => $categories_id
         ])->paginate($page);
     }
 }
