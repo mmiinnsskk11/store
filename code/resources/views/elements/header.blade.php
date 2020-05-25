@@ -76,35 +76,25 @@
                         <div class="location dropdown">
                             <a id="label1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="icon"><i class="ion-ios-location" aria-hidden="true"></i></span>
-                                <span>Our Store</span>
-                                <span class="ion-chevron-down"></span>
+                                <span>Минск</span>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="label1">
-                                <li><a href="#">New York</a></li>
-                                <li><a href="#">California</a></li>
-                            </ul>
                         </div>
                         <div class="language dropdown">
                             <a id="label2" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="icon"><i class="ion-ios-world-outline" aria-hidden="true"></i></span>
-                                <span>English</span>
-                                <span class="ion-chevron-down"></span>
+                                <span>Русский</span>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="label2">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">Vietnamese</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <div class="right-nav">
-                        <ul>
-                            <li><a href="#"><i class="ion-ios-heart fa-1a" aria-hidden="true"></i>wishlist</a></li>
-                            <li><a href="#"><i class="ion-arrow-swap fa-1a" aria-hidden="true"></i>compare</a></li>
-                            <li><a href="#"><i class="ion-ios-personadd fa-1a" aria-hidden="true"></i>create account</a></li>
-                            <li><a href="#"><i class="ion-log-in fa-1a" aria-hidden="true"></i>login</a></li>
-                        </ul>
+{{--                        <ul>--}}
+{{--                            <li><a href="#"><i class="ion-ios-heart fa-1a" aria-hidden="true"></i>wishlist</a></li>--}}
+{{--                            <li><a href="#"><i class="ion-arrow-swap fa-1a" aria-hidden="true"></i>compare</a></li>--}}
+{{--                            <li><a href="#"><i class="ion-ios-personadd fa-1a" aria-hidden="true"></i>create account</a></li>--}}
+{{--                            <li><a href="#"><i class="ion-log-in fa-1a" aria-hidden="true"></i>login</a></li>--}}
+{{--                        </ul>--}}
                         <span class="phone">800-123-6789</span>
                     </div>
                 </div>
@@ -213,7 +203,7 @@
                 <div class="col-md-3 col-sm-4 col-xs-6 column-left">
                     <aside id="column-left">
                         <nav class="navbar-default">
-                            <div class="menu-heading js-nav-menu">ALL CATEGORIES</div>
+                            <div class="menu-heading js-nav-menu">Все категории</div>
                             <div class="vertical-wrapper js-dropdown-menu js-dropdown-open active">
                                 <ul class="level0">
                                     @foreach ($category as $cat)
@@ -249,17 +239,17 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="menubar js-menubar">
                             <li class=" menu-homepage menu-item-has-child dropdown">
-                                <a href="/" title="Home"><i class="fa fa-home"></i>home</a>
+                                <a href="/" title="Home"><i class="fa fa-home"></i>Главная</a>
                             </li>
                             <li class="menu-collection-page menu-item-has-child dropdown">
                                 <a href="{{route('marketplace')}}" title="Marketplace">marketplace</a>
                             </li>
                             <li class="dropdown menu-contact-page menu-item-has-child">
-                                <a href="#" title="ContactUs">CONTACT US</a>
+                                <a href="#" title="ContactUs">О нас</a>
                                 <span class="plus js-plus-icon"></span>
                                 <ul class="dropdown-menu menu-level">
-                                    <li><a href="contact_us.html" title="contact us">Contact Us </a></li>
-                                    <li><a href="about-us.html" title="about us">About Us</a></li>
+                                    <li><a href="contact_us.html" title="contact us">Контакты</a></li>
+                                    <li><a href="about-us.html" title="about us">О нас</a></li>
                                 </ul>
                             </li>
                         </ul>

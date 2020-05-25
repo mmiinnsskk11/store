@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Catalog;
-use App\Subcategory;
-use Illuminate\Http\Request;
 
 class MarketplaceController extends Controller
 {
@@ -16,8 +14,8 @@ class MarketplaceController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Catalog $catalog
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Catalog $catalog)
     {

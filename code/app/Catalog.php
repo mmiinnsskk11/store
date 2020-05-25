@@ -17,6 +17,12 @@ class Catalog extends Model
         return $this->hasMany(Image::class, 'product_id','id');
     }
 
+    /**
+     * @param int $page
+     * @param int $delete
+     * @param int $active
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
     public function getCatalog($page = 30, $delete = 0, $active = 1)
     {
         return $this->with('images')->where([

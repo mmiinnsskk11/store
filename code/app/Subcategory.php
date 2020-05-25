@@ -19,8 +19,9 @@ class Subcategory extends Model
 
     /**
      * Запрос на получение всех подкатегорий
-     * @param $delete
-     * @return mixed
+     * @param int $page
+     * @param int $delete
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function getSubcategories($page = 12, $delete = 0)
     {
@@ -28,6 +29,12 @@ class Subcategory extends Model
             ->latest('id')->paginate($page);
     }
 
+    /**
+     * @param $category_id
+     * @param int $page
+     * @param int $delete
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
     public function getSubcategoryByCategory($category_id, $page = 12, $delete = 0)
     {
         return $this->with('category')
@@ -35,6 +42,10 @@ class Subcategory extends Model
             ->latest('id')->paginate($page);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getSubcategoryById($id)
     {
         return $this->where('id', $id)->first();
