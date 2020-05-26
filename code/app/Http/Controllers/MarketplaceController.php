@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Catalog;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class MarketplaceController extends Controller
@@ -24,10 +25,10 @@ class MarketplaceController extends Controller
         return view('marketplace.index', compact('products'));
     }
 
-    public function show($name, Catalog $catalog)
+    public function show($name, Subcategory $subcategory)
     {
-        $products = $catalog->getCatalog($name);
-        return view('marketplace.index', compact('products'));
+        $subcategory = $subcategory->getSubcategoryByCategory($name);
+        return view('marketplace.show', compact('subcategory', 'name'));
     }
 
 

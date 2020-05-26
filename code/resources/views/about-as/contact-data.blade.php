@@ -15,7 +15,6 @@
                 <div class="clearfix"></div>
             </div>
             <div class="widget-about-us">
-                <a href="#"><img src="img/about/about-us.png" alt="imgages" class="img-responsive"></a>
                 <div class="text-description">
                     <p>I’m a freelance fashion designer who specialises in print designs and combining fabrics. My designs have been sold all over Europe and the USA and I have worked with some of the biggest designers in the industry. I’m also currently working with a big supermarket to develop a gorgeous, yet affordable, range of beautifully printed key pieces that no women’s wardrobe should be without!</p>
                     <p>To see a selection of my designs and sketches, which is how all my best designs start, take a look at my portfolio page. To see who I have worked with see my client list and stockists.</p>

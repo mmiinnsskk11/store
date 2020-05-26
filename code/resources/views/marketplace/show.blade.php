@@ -4,7 +4,7 @@
 
     @include('elements.header')
 
-        <section class="shop-list-v2-page">
+    <section class="shop-list-v2-page">
         <div class="container">
             <div class="heading-sub">
                 <h3 class="pull-left">shop list</h3>
@@ -35,11 +35,11 @@
                                 </div>
                                 <div class="block-content">
                                     <ul>
-                                        @foreach ($category as $cat)
-                                        <li class="active">
-                                            <a href="{{route('marketplace.show', $cat->id)}}">{{$cat->name}}</a>
-                                            <span class="number">({{$cat->subCategory->count()}})</span>
-                                        </li>
+                                        @foreach ($subcategory as $item)
+                                            <li class="{{(!empty($name) && $name == $item->category_id) ? 'active' : ''}}">
+                                                <a href="{{route('marketplace.show', $item->id)}}">{{$item->name}}</a>
+                                                <span class="number">()</span>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -85,36 +85,35 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="product-list grid_full grid_sidebar grid-uniform">
-                            @foreach($products as $product)
-                            <div class="product-list-item">
-                                <div class="product-item-img">
-                                    <a href="#"><img src="{{asset("storage/" . $product->images[0]->image)}}" alt=" " class="img-responsive"></a>
-                                    <div class="label label-2 red label-top-20">Hot</div>
-                                </div>
-                                <div class="product-item-info">
-                                    <h3><a href="#" title="">{{$product->name}}</a></h3>
-                                    <div class="prod-price">
-                                        <span class="price black">{{$product->cost}} BYN</span>
-                                    </div>
-                                    <div class="button-ver2">
-                                        <a href="#" class="addcart-ver2" title="Add to cart"><span class="icon"></span>В карзину</a>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
+{{--                        <div class="product-list grid_full grid_sidebar grid-uniform">--}}
+{{--                            @foreach($subcategory as $item)--}}
+{{--                                <div class="product-list-item">--}}
+{{--                                    <div class="product-item-img">--}}
+{{--                                        <a href="#"><img src="{{asset("storage/" . $item->images[0]->image)}}" alt=" " class="img-responsive"></a>--}}
+{{--                                        <div class="label label-2 red label-top-20">Hot</div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="product-item-info">--}}
+{{--                                        <h3><a href="#" title="">{{$item->name}}</a></h3>--}}
+{{--                                        <div class="prod-price">--}}
+{{--                                            <span class="price black">{{$item->cost}} BYN</span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="button-ver2">--}}
+{{--                                            <a href="#" class="addcart-ver2" title="Add to cart"><span class="icon"></span>В карзину</a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
                         <div class="product-pagination">
                             <ul class="pagination">
 
-                                {{$products->links()}}
+                                {{$subcategory->links()}}
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </section>
+    </section>
     @include('elements.pre-footer')
-
     @include('elements.footer')

@@ -244,11 +244,14 @@
                             <li class="menu-collection-page menu-item-has-child dropdown">
                                 <a href="{{route('marketplace')}}" title="Marketplace">Товары</a>
                             </li>
+                            <li class="menu-collection-page menu-item-has-child dropdown">
+                                <a href="{{route('contact')}}" title="Marketplace">Контакты</a>
+                            </li>
                             <li class="dropdown menu-contact-page menu-item-has-child">
                                 <a href="#" title="ContactUs">О нас</a>
                                 <span class="plus js-plus-icon"></span>
                                 <ul class="dropdown-menu menu-level">
-                                    <li><a href="{{route('contact')}}" title="contact us">Контакты</a></li>
+                                    <li><a href="{{route('contact-data')}}" title="contact us">Контактные данные</a></li>
                                     <li><a href="{{route('about-as')}}" title="about us">О нас</a></li>
                                 </ul>
                             </li>

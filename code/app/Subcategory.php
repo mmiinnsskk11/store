@@ -17,6 +17,12 @@ class Subcategory extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+    public function image()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+
     /**
      * Запрос на получение всех подкатегорий
      * @param int $page
