@@ -19,6 +19,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('/categories', 'Admin\CategoryController');
     Route::resource('/subcategories', 'Admin\SubcategoryController');
     Route::resource('/catalog', 'Admin\CatalogController');
+    Route::get('/subscribers', 'Admin\SubscriberController@subscribers')->name('subscribers');
+
 });
 
 

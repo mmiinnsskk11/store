@@ -11,4 +11,9 @@ class Subscriber extends Model
     protected $fillable = [
         'email'
     ];
+
+    public function getSubscribers(int $page = 30)
+    {
+        return $this->paginate($page);
+    }
 }
