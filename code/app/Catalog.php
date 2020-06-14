@@ -36,4 +36,9 @@ class Catalog extends Model
             'delete' => $delete, 'active' => $active, 'categories_id' => $categories_id
         ])->paginate($page);
     }
+
+    public function getProducts($active = 1, $limit = 5)
+    {
+        return $this->where('active', $active)->orderBy('id')->limit($limit)->get();
+    }
 }
