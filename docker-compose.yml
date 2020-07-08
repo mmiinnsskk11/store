@@ -13,7 +13,7 @@ services:
       - ./code:/var/www
 
   php:
-    image: php:7.3-fpm
+    image: php:7.4-fpm
     build:
       context: ./
       dockerfile: Dockerfile-php

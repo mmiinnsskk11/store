@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://cdn.tiny.cloud/1/u9p0136kxmsv4tbrymw1l2cg0j89h5kicsnq1ztkwrzx0m24/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 {{--    <script src="{{ asset('js/app.js') }}"></script>--}}
     <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
 
@@ -41,7 +40,7 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
+{{--    <script src="http://maps.googleapis.com/maps/api/js"></script>--}}
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

@@ -154,8 +154,7 @@
                                     <span class="quantity"><strong class="number">02</strong> products</span>
                                 </div>
                                 <div class="content-2">
-                                    <a href="#" class="addcart">ADD TO CART</a>
-                                    <a href="#" class="viewcart">View Cart</a>
+                                    <button class="addcart" >Заказать</button>
                                 </div>
                             </div>
                         </div>
